@@ -1,2 +1,5 @@
 # web-330
-This is the coursework for the class WEB 330 - Enterprise JavaScript II
+Enterprise JavaScript II
+#contributors
+Professor Krasso - Bellevue University
+Keith Kozma - Bellevue University
