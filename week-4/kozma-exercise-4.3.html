@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__content_bellevue_edu"><head>
+  <meta charset="UTF-8">
+  <title>Exercise 4.3</title>
+
+  <!-- jQuery reference -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body data-gr-c-s-loaded="true">
+
+  <h4>HTTP DELETE Request</h4>
+
+  <button id="delete1">Delete the Security User</button>
+
+<script>
+/*
+============================================
+; Title: Assignment 4.3
+; Author: Keith Kozma
+; Date: 30 August 2019
+; Description: This program demonstrates GET and Post Operations within an HTTP request.
+;===========================================
+*/
+
+  $(function() {
+
+    $("#delete1").click(function() {
+      $.ajax({
+        url: 'http://httpbin.org/delete',
+        dataType: 'json',
+        type: 'DELETE',
+        data: { username: 'admin', password: 'secret', email: 'as@me.com'},
+        success: function(data, status) {
+          console.log('Username: ' + data.form.username + '\nPassword: ' + data.form.password + '\nEmail: ' + data.form.email + '\nStatus ' + data.form.status);
+        }
+      })
+    })
+
+  });
+
+</script>
+
+
+</body></html>
