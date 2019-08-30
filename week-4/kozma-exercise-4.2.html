@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__content_bellevue_edu"><head>
+  <meta charset="UTF-8">
+  <title>Exercise 4.2</title>
+
+  <!-- jQuery reference -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body data-gr-c-s-loaded="true">
+
+  <h4>HTTP GET Request</h4>
+
+  <button id="get1">Get Random Breed</button>
+
+<script>
+/*
+============================================
+; Title: Assignment 4.2
+; Author: Keith Kozma
+; Date: 30 August 2019
+; Description: This program demonstrates GET and Post Operations within an HTTP request.
+;===========================================
+*/
+
+  $(function() {
+
+    $("#get1").click(function() {
+      $.get('https://dog.ceo/api/breeds/image/random', function (data, status) {
+        console.log('Data: ' +JSON.stringify(data) + '\nStatus ' + status);
+
+      })
+    })
+
+  });
+
+</script>
+
+
+</body></html>
