@@ -1,0 +1,48 @@
+<html lang="en" class="gr__content_bellevue_edu"><head>
+  <meta charset="UTF-8">
+  <title>Exercise 5.2 - The Proxy Pattern</title>
+
+  <!-- jquery Reference Library -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body data-gr-c-s-loaded="true" style="">
+  <nav class="navbar.navbar-dark.bg-dark">
+    <a href="#" class="navbar-brand">Home</a>
+  </nav>
+
+
+  <br /><br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Exercise 5.2 - The Proxy Pattern</h2>
+
+        <button class="btn btn-primary" id="btnPreviewProxy">Preview Proxy</button>
+
+        <br />
+        <span id="spanProxResults"></span>
+      </div>
+    </div>
+  </div>
+<script>
+  $(function() {
+
+    var foodType = {
+      food: "Fruit",
+      type: "Apple",
+      display: function () {
+        $("#spanProxyResults").html("");
+
+        $("#spanProxyResults").append("<br />Food: " + this.food + "<br /> Type: " + this.type);
+      }
+    };
+
+    $("#btnPreviewProxy").click($.proxy(foodType, "display"))
+
+  });
+</script>
+
+
+
+</body></html>
