@@ -37,12 +37,12 @@
 <script>
 
 function PersonViewModel() {
-  this.function = ko.observable("Abraham");
+  this.firstName = ko.observable("Abraham");
   this.lastName = ko.observable("Lincoln");
   this.email = ko.observable("alincoln@domain.com");
 }
 
-ko.applyBinding(new PersonViewModel());
+ko.applyBindings(new PersonViewModel());
 
 </script>
 
