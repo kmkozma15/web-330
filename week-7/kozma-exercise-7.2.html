@@ -19,34 +19,32 @@
 
     <div class="form-group">
       <label for="firstName">First Name:</label>
-      <input type="text" data-bind="value: firstName" class="form-control" id="firstName"/>
+      <input id="firstName" type="text" class="form-control" data-bind="value: firstName">
     </div>
 
-    <div data-bind="if: displayName">
+    <div class="form-group" data-bind="if: displayName">
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" type="text" class="form-control" data-bind="value: lastName">
+    </div>
+
+    <div data-bind="if: fullName">
       <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" data-bind="value: lastName" class="form-control" id="lastName">
-      </div>
-
+        <label for="fullName">Full Name:</label>
+        <h2><span class="alert-success" data-bind="text: fullName"></span></h2>
     </div>
-    <br>
-
-    <div data-bind="if: displayName">
-      <h2><span id="nameOutput" class="alert-success" data-bind="text: fullName"></span></h2>
-    </div>
-    <br>
-
+    <br />
   </div>
 
 <script>
  function PersonViewModel() {
  this.firstName = ko.observable("");
  this.LastName = ko.observable("");
- this.fullName = ko.pureComputed(function () {
+
+ this.displayFirstName = ko.pureComputed(function () {
  return this.firstName();
  }, this);
  this.fullName = ko.pureComputed(function () {
- return this.firstName() + " by " + this.lastName();
+ return this.firstName() + " " + this.lastName();
  }, this);
  }
  ko.applyBindings(new PersonViewModel());
