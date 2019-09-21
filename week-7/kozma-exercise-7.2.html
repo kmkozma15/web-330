@@ -22,7 +22,7 @@
       <input id="firstName" type="text" class="form-control" data-bind="value: firstName">
     </div>
 
-    <div class="form-group" data-bind="if: displayName">
+    <div class="form-group" data-bind="if: displayFirstName">
       <label for="lastName">Last Name:</label>
       <input id="lastName" type="text" class="form-control" data-bind="value: lastName">
     </div>
@@ -38,7 +38,7 @@
 <script>
  function PersonViewModel() {
  this.firstName = ko.observable("");
- this.LastName = ko.observable("");
+ this.lastName = ko.observable("");
 
  this.displayFirstName = ko.pureComputed(function () {
  return this.firstName();
